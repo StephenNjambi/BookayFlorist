@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookayflorist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        .announcement-bar {
+            background: #000;
+            color: white;
+            text-align: center;
+            padding: 7px 0;
+            font-size: 13px;
+        }
+
+        .header {
+            padding: 20px 40px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-search {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 95px;
+        }
+
+        .search-bar {
+            position: relative;
+            width: 400px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 40px 12px 15px;
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .account-cart {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            font-size: 14px;
+        }
+
+        .navigation {
+            padding: 0 40px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 35px;
+            padding: 15px 0;
+        }
+
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 600px;
+        }
+
+        .hero-content {
+            background: #E7489C;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+
+        .hero-title {
+            font-size: 46px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-family: 'IvyOra Display', serif;
+        }
+
+        .hero-text {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .hero-button {
+            background: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 15px;
+            cursor: pointer;
+            width: fit-content;
+        }
+
+        .hero-image {
+            background: #9B6BB3;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-header {
+            max-width: 1400px;
+            margin: 40px auto 20px;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 300;
+            font-family: 'IvyOra Display', serif;
+        }
+
+        .view-all {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #E7489C;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="announcement-bar">
+        We might have delayed deliveries due to the ongoing rains.
+    </div>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-search">
+                <div class="logo">
+                    <img src="/api/placeholder/95/35" alt="PurPink" />
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." />
+                    <span class="search-icon">🔍</span>
+                </div>
+            </div>
+            <div class="account-cart">
+                <span>Account</span>
+                <span>Cart</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navigation">
+        <div class="nav-content">
+            <a href="#" class="nav-link">Gift Hampers 🎁</a>
+            <a href="#" class="nav-link">Flowers & Plants</a>
+            <a href="#" class="nav-link">Her</a>
+            <a href="#" class="nav-link">Him</a>
+            <a href="#" class="nav-link">Chocolates</a>
+            <a href="#" class="nav-link">Gifts</a>
+            <a href="#" class="nav-link">Experiences</a>
+            <a href="#" class="nav-link">Corporate Gifts</a>
+            <a href="#" class="nav-link">Cards</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">"There's no gift like a gift hamper"</h1>
+            <p class="hero-text">Send joy to your loved ones with these beautifully created gift hampers</p>
+            <button class="hero-button">Shop gift hampers</button>
+        </div>
+        <div class="hero-image">
+            <img src="/api/placeholder/700/500" alt="Gift Hampers" />
+        </div>
+    </section>
+
+    <div class="section-header">
+        <h2 class="section-title">More than just a hamper</h2>
+        <a href="#" class="view-all">View all</a>
+    </div>
+
+    <button class="chat-button">
+        Chat with Us
+    </button>
+</body>
+</html>
