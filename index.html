@@ -328,7 +328,7 @@
         const cards = document.querySelectorAll('.review-card');
         const cardWidth = cards[0].offsetWidth;
         const cardsPerView = 3;
-
+    
         function moveSlider(direction) {
             const maxSlides = cards.length - cardsPerView;
             currentSlide = (currentSlide + direction) % maxSlides;
@@ -337,14 +337,35 @@
             const offset = -currentSlide * (cardWidth + 24); // 24px is the gap
             slider.style.transform = `translateX(${offset}px)`;
         }
-
+    
         // Optional: Auto-slide every 5 seconds
         setInterval(() => moveSlider(1), 5000);
+    
+        // Scroll animation observer
+        const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const features = entry.target.querySelectorAll('.feature');
+                    if (entry.isIntersecting) {
+                        features.forEach(feature => {
+                            feature.classList.add('animate');
+                        });
+                    } else {
+                        features.forEach(feature => {
+                            feature.classList.remove('animate');
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const featuresSection = document.querySelector('.features');
+                if (featuresSection) {
+                    observer.observe(featuresSection);
+            }
+        });
     </script>
-
-
- 
-
 
 </body>
 </html>
