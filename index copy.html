@@ -6,10 +6,13 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Bookayflorist</title>
+    <!-- <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/128/346/346167.png"> -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/128/2926/2926754.png">
+
    </head>
 <body>
     <div class="announcement-bar">
-        We might have delayed deliveries due to the ongoing rains.
+        bookayflorist || nairobi.kenya
     </div>
 
     <header class="header">
@@ -29,7 +32,7 @@
                 <a href="https://twitter.com" class="social-icon">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a href="https://wa.me/your-phone-number" class="social-icon">
+                <a href="https://wa.me/your-phone" class="social-icon">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
@@ -55,9 +58,12 @@
             <button class="hero-button">Shop gift hampers</button>
         </div>
         <div class="hero-image">
-            <img src="/api/placeholder/700/500" alt="Gift Hampers" />
+            <!-- <img src="/api/placeholder/700/500" alt="Gift Hampers" /> -->
         </div>
     </section>
+
+
+
 <!-- card section start -->
     <section class="products-section">
         <div class="section-header">
@@ -143,21 +149,19 @@
     <div class="gift-icon">🎁</div>
     
     <section class="toy-banner">
-        <iframe 
-            width="100%" 
-            height="100%" 
-            src="./images/flower 5.mp4" 
-            title="Toy collection"
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen
-            class="banner-video">
-        </iframe>
-
+        <video 
+            class="banner-video" 
+            autoplay 
+            loop 
+            muted 
+            playsinline
+        >
+            <source src="./images/flower 5.mp4" type="video/mp4">
+        </video>
         <div class="banner-overlay">
             <h1 class="banner-title">Fun meets fancy</h1>
             <p class="banner-subtitle">With our gifts collection!</p>
-            <a href="#" class="shop-button">Shop with us </a>
+            <a href="#" class="shop-button">Shop Now</a>
         </div>
     </section>
 
@@ -296,7 +300,7 @@
     <footer class="footer">
         <div class="footer-content">
             <h2 class="footer-title">Talk to us Today</h2>
-            <p class="footer-text">We're currently taking on new projects. Would you like to discuss yours?</p>
+            <p class="footer-text">We do delivery || Would you like to place your order ?</p>
             <div class="contact-info">
                 <a href="#" class="contact-link">Contact Us →</a>
                 <p class="phone-number">+44 (0) 2020 090 505</p>
@@ -314,11 +318,11 @@
             <path fill="currentColor" d="M12 2L2 7v10l10 5 10-5V7l-10-5z"/>
         </svg> -->
 
-        <!-- <div class="wave-container">
+        <div class="wave-container">
             <svg class="wave" viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg">
                 <path fill="#f8f8f8" fill-opacity="1" d="M0,160L48,154.7C96,149,192,139,288,138.7C384,139,480,149,576,144C672,139,768,117,864,112C960,107,1056,117,1152,122.7C1248,128,1344,128,1392,128L1440,128L1440,200L1392,200C1344,200,1248,200,1152,200C1056,200,960,200,864,200C768,200,672,200,576,200C480,200,384,200,288,200C192,200,96,200,48,200L0,200Z"></path>
             </svg>
-        </div> -->
+        </div>
     </footer>
 
     <script>
@@ -327,7 +331,7 @@
         const cards = document.querySelectorAll('.review-card');
         const cardWidth = cards[0].offsetWidth;
         const cardsPerView = 3;
-
+    
         function moveSlider(direction) {
             const maxSlides = cards.length - cardsPerView;
             currentSlide = (currentSlide + direction) % maxSlides;
@@ -336,14 +340,35 @@
             const offset = -currentSlide * (cardWidth + 24); // 24px is the gap
             slider.style.transform = `translateX(${offset}px)`;
         }
-
+    
         // Optional: Auto-slide every 5 seconds
         setInterval(() => moveSlider(1), 5000);
+    
+        // Scroll animation observer
+        const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const features = entry.target.querySelectorAll('.feature');
+                    if (entry.isIntersecting) {
+                        features.forEach(feature => {
+                            feature.classList.add('animate');
+                        });
+                    } else {
+                        features.forEach(feature => {
+                            feature.classList.remove('animate');
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const featuresSection = document.querySelector('.features');
+                if (featuresSection) {
+                    observer.observe(featuresSection);
+            }
+        });
     </script>
-
-
- 
-
 
 </body>
 </html>
