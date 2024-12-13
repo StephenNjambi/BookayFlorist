@@ -40,7 +40,7 @@
 
     <nav class="navigation">
         <div class="nav-content">
-            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link active">Home</a>
             <a href="#" class="nav-link">Gift Hampers 🎁</a>
             <a href="#" class="nav-link">Flowers & Plants</a>
             <a href="#" class="nav-link">Chocolates</a>
@@ -327,6 +327,17 @@
     </footer>
 
     <script>
+        // naivgation script
+        const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+            });
+        });
+
+
+
         let currentSlide = 0;
         const slider = document.getElementById('reviewsSlider');
         const cards = document.querySelectorAll('.review-card');
@@ -369,6 +380,8 @@
                     observer.observe(featuresSection);
             }
         });
+
+
     </script>
 </body>
 </html>
