@@ -7,7 +7,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Bookayflorist</title>
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/128/2926/2926754.png">
-   </head>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section {
+            scroll-margin-top: 80px;
+        }
+    </style>
+</head>
 <body>
     <div class="announcement-bar">
         bookayflorist || nairobi.kenya
@@ -27,34 +36,32 @@
                 <a href="https://www.instagram.com/bookay_florists/" class="social-icon">
                     <i class="fab fa-instagram"></i>
                 </a>
-               
                 <a href="https://wa.me/0712203076" class="social-icon">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
-           
         </div>
     </header>
 
+   
     <nav class="navigation">
         <div class="nav-content">
             <a href="index.html" class="nav-link active">Home</a>
             <a href="./pages/gift-hampers.html" class="nav-link">Gift Hampers 🎁</a>
-            <a href="pages/flowers-and-plants.html" class="nav-link">Flowers</a>
-            <a href="pages/chocolates.html" class="nav-link">Chocolates</a>
-            <a href="pages/gifts.html" class="nav-link">Cakes</a>
-            <a href="pages/cards.html" class="nav-link">Cards</a>
+            <a href="./pages/flowers-and-plants.html" class="nav-link">Flowers & Plants</a>
+            <a href="./pages/chocolates.html" class="nav-link">Chocolates</a>
+            <a href="./pages/cakes.html" class="nav-link">Cakes</a>
+            <a href="./pages/cards.html" class="nav-link">Cards</a>
         </div>
     </nav>
 
-  
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-content">
             <h1 class="hero-title animate-fade-in">Freshly picked flowers for all ocassions</h1>
             <p class="hero-description animate-fade-in">Spread joy and love with our beautifully curated gift hampers, perfect for any occasion.</p>
             <div class="hero-cta">
                 <div class="gift-icon">🎁</div>
-                <a href="#" class="hero-button animate-fade-in">Shop Gift Hampers</a>
+                <a href="#hampers" class="hero-button animate-fade-in">Shop Gift Hampers</a>
             </div>
         </div>
         <div class="hero-image-container">
@@ -67,11 +74,7 @@
         </div>
     </section>
 
-
-
-
-    <!-- features section  -->
-    <section class="features">
+    <section class="features" id="about">
         <div class="h1">Who we are</div>
         <div class="features-grid">
             <div class="feature">
@@ -124,7 +127,7 @@
         </div>
     </section>
 
-    <section class="products-section">
+    <section class="products-section" id="flowers">
         <h1 class="section-title">Our Catalogue</h1>
         <div class="section-header">
             <h2 class="section-title">Fresh Flowers</h2>
@@ -226,11 +229,37 @@
         </div>
     </section>
 
+    <section class="gift-hampers" id="hampers">
+        <div class="section-header">
+            <h2 class="section-title">Gift Hampers</h2>
+            <a href="#" class="view-all">View all</a>
+        </div>
+        <div class="product-grid">
+            <!-- Add your gift hampers content here similar to flowers section -->
+        </div>
+    </section>
 
-  
+    <section class="chocolates-section" id="chocolates">
+        <div class="section-header">
+            <h2 class="section-title">Chocolates</h2>
+            <a href="#" class="view-all">View all</a>
+        </div>
+        <div class="product-grid">
+            <!-- Add your chocolates content here -->
+        </div>
+    </section>
 
-    <!-- cards section start   -->
-    <div class="container">
+    <section class="cakes-section" id="cakes">
+        <div class="section-header">
+            <h2 class="section-title">Cakes</h2>
+            <a href="#" class="view-all">View all</a>
+        </div>
+        <div class="product-grid">
+            <!-- Add your cakes content here -->
+        </div>
+    </section>
+
+    <div class="container" id="cards">
         <div class="section-header">
             <h2 class="section-title">Cards</h2>
             <a href="#" class="view-all">View all</a>
@@ -263,7 +292,6 @@
         </div>
     </div>
 
-    <!-- video section  -->
     <div class="gift-icon">🎁</div>
     
     <section class="toy-banner">
@@ -283,9 +311,7 @@
         </div>
     </section>
 
-
-    <!-- reviews section -->
-    <section class="reviews-section">
+    <section class="reviews-section" id="reviews">
         <div class="section-header">
             <h2 class="section-title">What our customers say</h2>
             <div class="overall-rating">
@@ -342,7 +368,6 @@
                     <p class="reviewer-name">Алексей</p>
                 </div>
                 
-                <!-- Duplicate cards for continuous sliding -->
                 <div class="review-card">
                     <div class="review-rating">
                         <span class="star">★</span>
@@ -363,32 +388,6 @@
         Chat with Us
     </button>
 
-    <!-- <footer class="footer">
-        <div class="footer-content">
-            <h2 class="footer-title">Talk to us Today</h2>
-            <p class="footer-text">We do delivery || Would you like to place your order ?</p>
-            <div class="contact-info">
-                <a href="#" class="contact-link">Contact Us →</a>
-                <p class="phone-number">+44 (0) 2020 090 505</p>
-                <p class="email">hi@example.co.uk</p>
-                
-            </div>
-            <div class="social-links">
-                <a href="#" class="social-link">f</a>
-                <a href="#" class="social-link">t</a>
-                <a href="#" class="social-link">i</a>
-                <a href="#" class="social-link">y</a>
-            </div>
-        </div>
-
-      
-
-        <div class="wave-container">
-            <svg class="wave" viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#f8f8f8" fill-opacity="1" d="M0,160L48,154.7C96,149,192,139,288,138.7C384,139,480,149,576,144C672,139,768,117,864,112C960,107,1056,117,1152,122.7C1248,128,1344,128,1392,128L1440,128L1440,200L1392,200C1344,200,1248,200,1152,200C1056,200,960,200,864,200C768,200,672,200,576,200C480,200,384,200,288,200C192,200,96,200,48,200L0,200Z"></path>
-            </svg>
-        </div>
-    </footer> -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
@@ -403,11 +402,11 @@
             <div class="footer-section">
                 <h3 class="footer-title">Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Gift Hampers</a></li>
-                    <li><a href="#">Flowers & Plants</a></li>
-                    <li><a href="#">Gifts</a></li>
-                    <li><a href="#">Cards</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#hampers">Gift Hampers</a></li>
+                    <li><a href="#flowers">Flowers & Plants</a></li>
+                    <li><a href="#cakes">Cakes</a></li>
+                    <li><a href="#cards">Cards</a></li>
                 </ul>
             </div>
     
@@ -434,37 +433,217 @@
     </footer>
 
     <script>
-        // naivgation script
-        const navLinks = document.querySelectorAll('.nav-link');
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const currentPage = window.location.pathname;
+
+            // Handle navigation links
             navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    this.classList.add('active');
+                const href = link.getAttribute('href');
+                
+                // Remove default active class
+                link.classList.remove('active');
+
+                // If it's a page link (not starting with #)
+                if (!href.startsWith('#')) {
+                    // Add active class if current page matches link
+                    if (currentPage.includes(href) || 
+                        (currentPage.endsWith('/') && href === 'index.html') ||
+                        (currentPage.endsWith('index.html') && href === 'index.html')) {
+                        link.classList.add('active');
+                    }
+                } 
+                // If it's a section link (starts with #)
+                else {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetId = href;
+                        const targetSection = document.querySelector(targetId);
+                        
+                        if (targetSection) {
+                            targetSection.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                            
+                            // Update active state
+                            navLinks.forEach(l => l.classList.remove('active'));
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+
+            // Handle section scrolling if we're on a page with sections
+            const sections = document.querySelectorAll('section[id], .container[id]');
+            if (sections.length > 0) {
+                window.addEventListener('scroll', () => {
+                    let current = '';
+                    const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.clientHeight;
+
+                        if (scrollPosition >= sectionTop && 
+                            scrollPosition <= sectionTop + sectionHeight) {
+                            current = '#' + section.getAttribute('id');
+                        }
+                    });
+
+                    // Update active state for section links
+                    navLinks.forEach(link => {
+                        const href = link.getAttribute('href');
+                        if (href.startsWith('#')) {
+                            link.classList.remove('active');
+                            if (href === current) {
+                                link.classList.add('active');
+                            }
+                        }
+                    });
+                });
+            }
+
+            // Reviews slider functionality
+            const slider = document.getElementById('reviewsSlider');
+            if (slider) {
+                let currentSlide = 0;
+                const cards = document.querySelectorAll('.review-card');
+                const cardWidth = cards[0].offsetWidth;
+                const cardsPerView = 3;
+                const maxSlides = cards.length - cardsPerView;
+
+                function moveSlider(direction) {
+                    currentSlide = (currentSlide + direction) % maxSlides;
+                    if (currentSlide < 0) currentSlide = maxSlides - 1;
+                    
+                    const offset = -currentSlide * (cardWidth + 24);
+                    slider.style.transform = `translateX(${offset}px)`;
+                }
+
+                // Auto-slide
+                const autoSlideInterval = setInterval(() => moveSlider(1), 5000);
+
+                // Manual navigation
+                const prevArrow = document.querySelector('.prev-arrow');
+                const nextArrow = document.querySelector('.next-arrow');
+
+                if (prevArrow && nextArrow) {
+                    prevArrow.addEventListener('click', () => {
+                        clearInterval(autoSlideInterval);
+                        moveSlider(-1);
+                    });
+
+                    nextArrow.addEventListener('click', () => {
+                        clearInterval(autoSlideInterval);
+                        moveSlider(1);
+                    });
+                }
+            }
+
+            // Features animation
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const features = entry.target.querySelectorAll('.feature');
+                    features.forEach(feature => {
+                        feature.classList.toggle('animate', entry.isIntersecting);
+                    });
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            const featuresSection = document.querySelector('.features');
+            if (featuresSection) {
+                observer.observe(featuresSection);
+            }
+
+            // Update hero button to use page link instead of section link
+            const heroButton = document.querySelector('.hero-button');
+            if (heroButton) {
+                heroButton.setAttribute('href', 'pages/gift-hampers.html');
+            }
+
+            // Update footer links to use page links
+            const footerLinks = document.querySelectorAll('.footer-links a');
+            footerLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href.startsWith('#')) {
+                    link.setAttribute('href', `pages/${href.substring(1)}.html`);
+                }
             });
         });
-
-
-
-        let currentSlide = 0;
-        const slider = document.getElementById('reviewsSlider');
-        const cards = document.querySelectorAll('.review-card');
-        const cardWidth = cards[0].offsetWidth;
-        const cardsPerView = 3;
+    </script>
     
-        function moveSlider(direction) {
-            const maxSlides = cards.length - cardsPerView;
-            currentSlide = (currentSlide + direction) % maxSlides;
-            if (currentSlide < 0) currentSlide = maxSlides - 1;
+<!-- 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
             
-            const offset = -currentSlide * (cardWidth + 24); // 24px is the gap
-            slider.style.transform = `translateX(${offset}px)`;
-        }
-    
-        // Optional: Auto-slide every 5 seconds
-        setInterval(() => moveSlider(1), 5000);
-    
-        // Scroll animation observer
-        const observer = new IntersectionObserver((entries) => {
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    e.target.classList.add('active');
+                    
+                    // Get the target section id
+                    const targetId = e.target.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Highlight active section while scrolling
+            window.addEventListener('scroll', () => {
+                let current = '';
+                
+                const sections = document.querySelectorAll('section, .container');
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= (sectionTop - sectionHeight/3)) {
+                        current = '#' + section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Reviews slider functionality
+            let currentSlide = 0;
+            const slider = document.getElementById('reviewsSlider');
+            const cards = document.querySelectorAll('.review-card');
+            const cardWidth = cards[0].offsetWidth;
+            const cardsPerView = 3;
+        
+            function moveSlider(direction) {
+                const maxSlides = cards.length - cardsPerView;
+                currentSlide = (currentSlide + direction) % maxSlides;
+                if (currentSlide < 0) currentSlide = maxSlides - 1;
+                
+                const offset = -currentSlide * (cardWidth + 24);
+                slider.style.transform = `translateX(${offset}px)`;
+            }
+        
+            setInterval(() => moveSlider(1), 5000);
+        
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     const features = entry.target.querySelectorAll('.feature');
                     if (entry.isIntersecting) {
@@ -481,14 +660,11 @@
                 threshold: 0.1
             });
 
-            document.addEventListener('DOMContentLoaded', () => {
-                const featuresSection = document.querySelector('.features');
-                if (featuresSection) {
-                    observer.observe(featuresSection);
+            const featuresSection = document.querySelector('.features');
+            if (featuresSection) {
+                observer.observe(featuresSection);
             }
         });
-
-
-    </script>
+    </script> -->
 </body>
 </html>
