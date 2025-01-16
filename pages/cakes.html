@@ -35,11 +35,16 @@
 
     <nav class="navigation">
         <div class="nav-content">
-            <a href="../index.html" class="nav-link">Home</a>
-            <a href="flowers-and-plants.html" class="nav-link">Flowers & Plants</a>
-            <a href="chocolates.html" class="nav-link">Chocolates</a>
-            <a href="cakes.html" class="nav-link active">Cakes</a>
-            <a href="cards.html" class="nav-link">Cards</a>
+            <button class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="flowers-and-plants.html" class="nav-link">Flowers & Plants</a>
+                <a href="chocolates.html" class="nav-link">Chocolates</a>
+                <a href="cakes.html" class="nav-link active">Cakes</a>
+                <a href="cards.html" class="nav-link">Cards</a>
+            </div>
         </div>
     </nav>
 
@@ -233,6 +238,33 @@
     </button>
 
     <script>
+        // Add to your existing script
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                const icon = this.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.navigation')) {
+                    navLinks.classList.remove('active');
+                    const icon = navToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
         document.addEventListener('DOMContentLoaded', function() {
             // Category buttons
             const categoryBtns = document.querySelectorAll('.category-btn');
