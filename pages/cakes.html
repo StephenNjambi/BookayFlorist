@@ -3,373 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Cakes - Bookayflorist</title>
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/128/2926/2926754.png">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./styles/cakes.css">
 
-        section {
-            scroll-margin-top: 80px;
-        }
-
-        /* New Styles for Cakes Section */
-        .cakes-layout {
-            display: flex;
-            gap: 2rem;
-            margin-top: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .filters-sidebar {
-            width: 200px;
-            flex-shrink: 0;
-        }
-
-        .filter-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .filter-button {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.5rem;
-            font-size: 0.875rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            text-align: left;
-        }
-
-        .products-main {
-            flex: 1;
-        }
-
-        .products-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding: 1rem 0;
-        }
-
-        .products-count {
-            font-size: 0.875rem;
-            color: #666;
-        }
-
-        .products-controls {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .sort-control {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-        }
-
-        .sort-control select {
-            background: transparent;
-            border: none;
-            font-size: 0.875rem;
-            padding-right: 1rem;
-        }
-
-        .view-controls {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .view-btn {
-            padding: 0.5rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.2s;
-        }
-
-        .view-btn:hover {
-            background-color: #f0f0f0;
-        }
-
-        .product-card {
-            border: 1px solid #eee;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-image-container {
-            position: relative;
-            aspect-ratio: 1;
-            overflow: hidden;
-        }
-
-        .product-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .product-card:hover .product-image {
-            transform: scale(1.05);
-        }
-
-        .personalize-badge {
-            position: absolute;
-            top: 1rem;
-            left: 1rem;
-            background: white;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .favorite-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: white;
-            border: none;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
-        }
-
-        .favorite-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .product-content {
-            padding: 1rem;
-        }
-
-        .product-title {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .product-description {
-            color: #666;
-            font-size: 0.875rem;
-            margin-bottom: 1rem;
-        }
-
-        .product-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .product-price {
-            font-weight: 500;
-        }
-
-
-
-
-        .custom-order {
-    background-color: #f8f3f8;  /* Light purple tint to match your theme */
-    padding: 80px 20px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.custom-order-container {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
-
-.custom-order-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-}
-
-.custom-order-title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 8px;
-    position: relative;
-}
-
-.custom-order-title::after {
-    content: '🎂';
-    position: absolute;
-    top: -20px;
-    right: -40px;
-    font-size: 1.5rem;
-    opacity: 0.7;
-}
-
-.custom-order-text {
-    font-size: 1.1rem;
-    color: #666;
-    max-width: 600px;
-    line-height: 1.6;
-    margin-bottom: 16px;
-}
-
-.custom-order-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background-color: #000;
-    color: white;
-    padding: 16px 32px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.custom-order-btn i {
-    transition: transform 0.3s ease;
-}
-
-.custom-order-btn:hover {
-    background-color: #333;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.custom-order-btn:hover i {
-    transform: translateX(5px);
-}
-
-/* Add a subtle background pattern */
-.custom-order::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 50% 50%, #fff 0%, transparent 70%);
-    opacity: 0.6;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .custom-order {
-        padding: 60px 20px;
-    }
-
-    .custom-order-title {
-        font-size: 2rem;
-    }
-
-    .custom-order-text {
-        font-size: 1rem;
-        padding: 0 20px;
-    }
-
-    .custom-order-btn {
-        padding: 14px 28px;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .custom-order {
-        padding: 40px 16px;
-    }
-
-    .custom-order-title {
-        font-size: 1.75rem;
-    }
-
-    .custom-order-content {
-        gap: 16px;
-    }
-}
-        .add-to-cart-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: #000;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.875rem;
-            transition: background-color 0.2s;
-        }
-
-        .add-to-cart-btn:hover {
-            background-color: #333;
-        }
-
-        @media (max-width: 768px) {
-            .cakes-layout {
-                flex-direction: column;
-            }
-
-            .filters-sidebar {
-                width: 100%;
-            }
-
-            .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-        }
-
-        /* Original styles remain unchanged */
-        /* Your existing styles from style.css */
-    </style>
 </head>
 <body>
-    <!-- Announcement Bar -->
     <div class="announcement-bar">
         bookayflorist || nairobi.kenya
     </div>
 
-    <!-- Header -->
     <header class="header">
         <div class="header-content">
-            <div class="logo-search">
-                <div class="logo">
-                    <img src="../images/Bookay Logo 2024 fv-1.png" alt="Bookayflorist" />
-                </div>
+            <div class="logo">
+                <img src="../images/Bookay Logo 2024 fv-1.png" alt="Bookayflorist" />
             </div>
             <div class="social-links">
-                <a href="https://web.facebook.com/BooKayFlorists/?_rdc=1&_rdr" class="social-icon">
+                <a href="https://web.facebook.com/BooKayFlorists/" class="social-icon">
                     <i class="fab fa-facebook"></i>
                 </a>
                 <a href="https://www.instagram.com/bookay_florists/" class="social-icon">
@@ -382,11 +33,9 @@
         </div>
     </header>
 
-    <!-- Navigation -->
     <nav class="navigation">
         <div class="nav-content">
             <a href="../index.html" class="nav-link">Home</a>
-            <!-- <a href="gift-hampers.html" class="nav-link">Gift Hampers 🎁</a> -->
             <a href="flowers-and-plants.html" class="nav-link">Flowers & Plants</a>
             <a href="chocolates.html" class="nav-link">Chocolates</a>
             <a href="cakes.html" class="nav-link active">Cakes</a>
@@ -394,7 +43,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1 class="hero-title animate-fade-in">Delightful cakes for every moment</h1>
@@ -405,22 +53,18 @@
         </div>
     </section>
 
-    <!-- Cakes Section -->
-    <section id="cakes-section" class="products-section">
+    <section class="products-section">
         <div class="cakes-layout">
-            <!-- Filters Sidebar -->
             <div class="filters-sidebar">
                 <div class="filter-group">
                     <button class="filter-button">
                         Price
                         <i class="fas fa-chevron-down"></i>
                     </button>
-                    
                     <button class="filter-button">
                         Category
                         <i class="fas fa-chevron-down"></i>
                     </button>
-                    
                     <button class="filter-button">
                         Availability
                         <i class="fas fa-chevron-down"></i>
@@ -428,11 +72,9 @@
                 </div>
             </div>
 
-            <!-- Products Main Content -->
             <div class="products-main">
                 <div class="products-header">
                     <p class="products-count">5 products</p>
-                    
                     <div class="products-controls">
                         <div class="sort-control">
                             <span>Sort by:</span>
@@ -443,9 +85,8 @@
                                 <option>Newest</option>
                             </select>
                         </div>
-                        
                         <div class="view-controls">
-                            <button class="view-btn">
+                            <button class="view-btn active">
                                 <i class="fas fa-th-large"></i>
                             </button>
                             <button class="view-btn">
@@ -455,107 +96,115 @@
                     </div>
                 </div>
 
-              <!-- Product Grid -->
-        <div class="product-grid">
-            <!-- Cake Card 1 -->
-            <div class="product-card">
-                <div class="product-image-container">
-                    <img src="https://bonnibakery.com/wp-content/uploads/2021/01/ChocolateCake-2-scaled.jpg" alt="Classic Chocolate Cake" class="product-image">
-                    <span class="personalize-badge">PERSONALISE</span>
-                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                <div class="cake-categories">
+                    <button class="category-btn active">All Cakes</button>
+                    <button class="category-btn">Simple Treats</button>
+                    <button class="category-btn">Gateau</button>
+                    <button class="category-btn">Sponge Kushen</button>
+                    <button class="category-btn">Mixed and Fancy</button>
+                    <button class="category-btn">Cupcakes</button>
                 </div>
-                <div class="product-content">
-                    <h3 class="product-title">Classic Chocolate Cake</h3>
-                    <p class="product-description">Rich chocolate layers with smooth ganache</p>
-                    <div class="product-footer">
-                        <span class="product-price">KES 3,500</span>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Cake Card 2 -->
-            <div class="product-card">
-                <div class="product-image-container">
-                    <img src="https://images.immediate.co.uk/production/volatile/sites/30/2016/10/Toffee-apple-cake-89abda5.jpg?quality=90&resize=556,505" alt="Vanilla Bean Celebration" class="product-image">
-                    <span class="personalize-badge">PERSONALISE</span>
-                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
-                </div>
-                <div class="product-content">
-                    <h3 class="product-title">Vanilla Bean Celebration</h3>
-                    <p class="product-description">Light vanilla sponge with buttercream frosting</p>
-                    <div class="product-footer">
-                        <span class="product-price">KES 3,200</span>
+               <!-- Replace the product-grid div with this: -->
+                <div class="product-grid">
+                    <!-- Cake Card 1 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://bonnibakery.com/wp-content/uploads/2021/01/ChocolateCake-2-scaled.jpg" alt="Classic Chocolate Cake" class="product-image">
+                            <span class="personalize-badge">PERSONALISE</span>
+                            <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Classic Chocolate Cake</h3>
+                            <p class="product-description">Rich chocolate layers with smooth ganache</p>
+                            <div class="product-footer">
+                                <span class="product-price">KES 3,500</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Cake Card 3 -->
-            <div class="product-card">
-                <div class="product-image-container">
-                    <img src="https://recipesblob.oetker.ca/assets/b75297c3976e41a39cf3e74376d1459a/1272x764/birthday-cake-11.webp" alt="Red Velvet Dream" class="product-image">
-                    <span class="personalize-badge">PERSONALISE</span>
-                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
-                </div>
-                <div class="product-content">
-                    <h3 class="product-title">Red Velvet Dream</h3>
-                    <p class="product-description">Classic red velvet with cream cheese frosting</p>
-                    <div class="product-footer">
-                        <span class="product-price">KES 3,800</span>
+                    <!-- Cake Card 2 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://images.immediate.co.uk/production/volatile/sites/30/2016/10/Toffee-apple-cake-89abda5.jpg?quality=90&resize=556,505" alt="Vanilla Bean Celebration" class="product-image">
+                            <span class="personalize-badge">PERSONALISE</span>
+                            <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Vanilla Bean Celebration</h3>
+                            <p class="product-description">Light vanilla sponge with buttercream frosting</p>
+                            <div class="product-footer">
+                                <span class="product-price">KES 3,200</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Cake Card 4 -->
-            <div class="product-card">
-                <div class="product-image-container">
-                    <img src="https://www.freedombakery.com/cdn/shop/products/kb076-view1-kb076.jpg?v=1710786900&width=533" alt="Fruit Forest Cake" class="product-image">
-                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
-                </div>
-                <div class="product-content">
-                    <h3 class="product-title">Fruit Forest Cake</h3>
-                    <p class="product-description">Fresh fruits and cream layers</p>
-                    <div class="product-footer">
-                        <span class="product-price">KES 4,000</span>
+                    <!-- Cake Card 3 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://recipesblob.oetker.ca/assets/b75297c3976e41a39cf3e74376d1459a/1272x764/birthday-cake-11.webp" alt="Red Velvet Dream" class="product-image">
+                            <span class="personalize-badge">PERSONALISE</span>
+                            <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Red Velvet Dream</h3>
+                            <p class="product-description">Classic red velvet with cream cheese frosting</p>
+                            <div class="product-footer">
+                                <span class="product-price">KES 3,800</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Cake Card 5 -->
-            <div class="product-card">
-                <div class="product-image-container">
-                    <img src="https://butterflybakeryne.com/cdn/shop/files/simple-rosettes-pearls-cake_butterfly-bakery-2.png?v=1719451649&width=2000" alt="Birthday Special" class="product-image">
-                    <span class="personalize-badge">PERSONALISE</span>
-                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
-                </div>
-                <div class="product-content">
-                    <h3 class="product-title">Birthday Special</h3>
-                    <p class="product-description">Customizable birthday cake with decorations</p>
-                    <div class="product-footer">
-                        <span class="product-price">KES 4,500</span>
+                    <!-- Cake Card 4 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://www.freedombakery.com/cdn/shop/products/kb076-view1-kb076.jpg?v=1710786900&width=533" alt="Fruit Forest Cake" class="product-image">
+                            <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Fruit Forest Cake</h3>
+                            <p class="product-description">Fresh fruits and cream layers</p>
+                            <div class="product-footer">
+                                <span class="product-price">KES 4,000</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Cake Card 6 -->
-            <div class="product-card">
-                <div class="product-image-container">
-                    <img src="https://divacakes.com.ng/wp-content/uploads/2020/05/wedding-cake4-jpg.webp" alt="Coffee Caramel" class="product-image">
-                    <button class="favorite-btn"><i class="far fa-heart"></i></button>
-                </div>
-                <div class="product-content">
-                    <h3 class="product-title">Coffee Caramel</h3>
-                    <p class="product-description">Coffee-infused layers with caramel drizzle</p>
-                    <div class="product-footer">
-                        <span class="product-price">KES 3,900</span>
+                    <!-- Cake Card 5 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://butterflybakeryne.com/cdn/shop/files/simple-rosettes-pearls-cake_butterfly-bakery-2.png?v=1719451649&width=2000" alt="Birthday Special" class="product-image">
+                            <span class="personalize-badge">PERSONALISE</span>
+                            <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Birthday Special</h3>
+                            <p class="product-description">Customizable birthday cake with decorations</p>
+                            <div class="product-footer">
+                                <span class="product-price">KES 4,500</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cake Card 6 -->
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="https://divacakes.com.ng/wp-content/uploads/2020/05/wedding-cake4-jpg.webp" alt="Coffee Caramel" class="product-image">
+                            <button class="favorite-btn"><i class="far fa-heart"></i></button>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Coffee Caramel</h3>
+                            <p class="product-description">Coffee-infused layers with caramel drizzle</p>
+                            <div class="product-footer">
+                                <span class="product-price">KES 3,900</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
             </div>
         </div>
     </section>
 
-    <!-- Custom Order Section -->
     <section class="custom-order">
         <div class="custom-order-container">
             <div class="custom-order-content">
@@ -569,7 +218,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
@@ -580,19 +228,16 @@
                     <li><i class="fas fa-map-marker-alt"></i> Freedom Heights Mall, Nairobi, Kenya 00100</li>
                 </ul>
             </div>
-
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="gift-hampers.html">Gift Hampers</a></li>
                     <li><a href="flowers-and-plants.html">Flowers & Plants</a></li>
                     <li><a href="chocolates.html">Chocolates</a></li>
                     <li><a href="cakes.html">Cakes</a></li>
                     <li><a href="cards.html">Cards</a></li>
                 </ul>
             </div>
-
             <div class="footer-section">
                 <h3>Opening Hours</h3>
                 <ul class="footer-hours">
@@ -600,37 +245,28 @@
                     <li><i class="far fa-calendar-alt"></i> Monday - Saturday</li>
                 </ul>
             </div>
-
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
         </div>
-
         <div class="footer-bottom">
-            <p>&copy; 2023 Bookayflorist. All rights reserved.</p>
+            <p>&copy; 2024 Bookayflorist. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Chat Button -->
     <button class="chat-button">
         Chat with Us
     </button>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Navigation active state
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                if (link.getAttribute('href') === window.location.pathname.split('/').pop()) {
-                    link.classList.add('active');
-                }
+            // Category buttons
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
             });
 
-            // View toggle functionality
+            // View toggle
             const viewBtns = document.querySelectorAll('.view-btn');
             const productGrid = document.querySelector('.product-grid');
             
@@ -639,15 +275,15 @@
                     viewBtns.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
                     
-                    if (index === 0) { // Grid view
+                    if (index === 0) {
                         productGrid.classList.remove('list-view');
-                    } else { // List view
+                    } else {
                         productGrid.classList.add('list-view');
                     }
                 });
             });
 
-            // Favorite button functionality
+            // Favorite button
             const favoriteBtns = document.querySelectorAll('.favorite-btn');
             favoriteBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
