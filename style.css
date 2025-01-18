@@ -1212,6 +1212,34 @@
 
 
 
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin: 0 40px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.section-header h2 {
+    font-size: 28px;
+    color: #484848;
+    font-weight: 400;
+    margin: 0;
+}
+
+.view-all {
+    color: #FF3366;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+
+
 
 
 
