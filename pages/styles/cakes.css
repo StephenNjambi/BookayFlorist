@@ -257,6 +257,76 @@ body {
   color: var(--primary-pink);
 }
 
+
+
+/* cake menu */
+.cake-menu {
+  background: #1a1f2c;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  position: sticky;
+  top: 20px;
+}
+
+.cake-menu h2 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.menu-section {
+  margin-bottom: 30px;
+}
+
+.menu-section h3 {
+  color: #ffd700;
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.menu-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-section li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.cake-name {
+  color: #fff;
+}
+
+.cake-price {
+  color: #fff;
+}
+
+.cakes-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .cakes-layout {
+      grid-template-columns: 1fr;
+  }
+  
+  .cake-menu {
+      position: static;
+      margin-bottom: 30px;
+  }
+}
+
 /* Products Layout */
 .cakes-layout {
   display: flex;
