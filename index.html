@@ -50,7 +50,7 @@
             <a href="./pages/gift-hampers.html" class="nav-link">Gift Hampers 🎁</a>
             <a href="./pages/flowers-and-plants.html" class="nav-link">Flowers & Plants</a>
             <a href="./pages/chocolates.html" class="nav-link">Chocolates</a>
-            <a href="./pages/cakes.html" class="nav-link">Cakes</a>
+            <a href="/pages/cakes.html" class="nav-link">Cakes</a>
             <a href="./pages/cards.html" class="nav-link">Cards</a>
         </div>
     </nav>
@@ -546,97 +546,5 @@
             });
         });
     </script>
-    
-<!-- 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    
-                    // Remove active class from all links
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    
-                    // Add active class to clicked link
-                    e.target.classList.add('active');
-                    
-                    // Get the target section id
-                    const targetId = e.target.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    
-                    if (targetSection) {
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-
-            // Highlight active section while scrolling
-            window.addEventListener('scroll', () => {
-                let current = '';
-                
-                const sections = document.querySelectorAll('section, .container');
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= (sectionTop - sectionHeight/3)) {
-                        current = '#' + section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === current) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-
-            // Reviews slider functionality
-            let currentSlide = 0;
-            const slider = document.getElementById('reviewsSlider');
-            const cards = document.querySelectorAll('.review-card');
-            const cardWidth = cards[0].offsetWidth;
-            const cardsPerView = 3;
-        
-            function moveSlider(direction) {
-                const maxSlides = cards.length - cardsPerView;
-                currentSlide = (currentSlide + direction) % maxSlides;
-                if (currentSlide < 0) currentSlide = maxSlides - 1;
-                
-                const offset = -currentSlide * (cardWidth + 24);
-                slider.style.transform = `translateX(${offset}px)`;
-            }
-        
-            setInterval(() => moveSlider(1), 5000);
-        
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    const features = entry.target.querySelectorAll('.feature');
-                    if (entry.isIntersecting) {
-                        features.forEach(feature => {
-                            feature.classList.add('animate');
-                        });
-                    } else {
-                        features.forEach(feature => {
-                            feature.classList.remove('animate');
-                        });
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            const featuresSection = document.querySelector('.features');
-            if (featuresSection) {
-                observer.observe(featuresSection);
-            }
-        });
-    </script> -->
 </body>
 </html>
