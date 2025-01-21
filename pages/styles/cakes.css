@@ -145,17 +145,21 @@ body {
 .main-content {
   max-width: 1400px;
   margin: 40px auto;
-  padding: 0 20px;
+  padding: 0 10px;  /* Reduced from 20px to 10px */
   display: flex;
-  gap: 30px;
+  gap: 50px;  /* Increased gap from 30px to 50px */
 }
 
 /* Menu Section */
 .menu-section {
-  width: 200px;
+  width: 300px;
   flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 100px;
+  margin-left: 0;
 }
 
+/* Rest of the menu styles remain unchanged */
 .cake-menu {
   background: #1a1f2c;
   color: white;
