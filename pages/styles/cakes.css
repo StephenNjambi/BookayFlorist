@@ -144,10 +144,10 @@ body {
 /* Main Content Layout */
 .main-content {
   max-width: 1400px;
-  margin: 40px auto;
-  padding: 0 10px;  /* Reduced from 20px to 10px */
+  margin: 40px 10px 40px 60px; /* Changed margin to reduce left space specifically */
+  padding: 0;  /* Removed padding completely */
   display: flex;
-  gap: 50px;  /* Increased gap from 30px to 50px */
+  gap: 50px;
 }
 
 /* Menu Section */
