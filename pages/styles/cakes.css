@@ -46,7 +46,8 @@ body {
 }
 
 .logo img {
-  height: 60px;
+  height: auto;
+  width: 150px;
 }
 
 .social-links {
